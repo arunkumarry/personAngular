@@ -2,6 +2,6 @@
     <button class="btn btn-success" (click)="loadPersonFormComponent();" style="padding:5px 5px;">+ New Person</button>
     <button class="btn btn-primary" (click)="loadPersonListComponent();" style="padding:5px 5px; float: right;">View All Persons</button>
 
-    <app-person-form *ngIf="loadForm" (submitted)="formSubmitted($event)"></app-person-form>
+    <app-person-form *ngIf="loadForm" (submitted)="formSubmitted()"></app-person-form>
     <app-person-list *ngIf="loadPersonList"></app-person-list>
 </div>
