@@ -1,0 +1,31 @@
+<app-person-form *ngIf="loadedForm" (submitted)="formSubmitted($event)"></app-person-form>
+<div class="pt-3">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Country</th>
+            <th scope="col">State</th>
+            <th scope="col">City</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let person of persons; let i = index">
+          <tr>
+            <td>{{ person.first_name }}</td>
+            <td>{{ person.last_name }}</td>
+            <td>{{ person.email }}</td>
+            <td>{{ person.phone_number }}</td>
+            <td>{{ person.country }}</td>
+            <td>{{ person.state }}</td>
+            <td>{{ person.city }}</td>
+            <td><button (click)="editPerson(i)" class="btn btn-info">Edit</button>|
+            <button (click)="deletePerson(i)" class="btn btn-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

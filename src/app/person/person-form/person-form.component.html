@@ -1,0 +1,30 @@
+<div class="pt-2">
+    <h3>Person Form</h3>
+    <form (ngSubmit)="onSubmit()" [formGroup]='personForm'>
+        <input type="text" placeholder="First Name" formControlName="first_name" class="form-group form-control">
+        <input type="text" placeholder="Last Name" formControlName="last_name" class="form-group form-control">
+        <input type="text" placeholder="Email" formControlName="email" class="form-group form-control">
+        <input type="text" placeholder="Phone Number" formControlName="phone_number" class="form-group form-control">
+        <div  title="Please select the country that the customer will primarily be served from">
+            <select placeholder="Phantasyland" (change)="changeCountry($event.target.value)" formControlName="country" class="form-group form-control">
+                <option value="" selected disabled>Select Country</option>
+                <option *ngFor ="let count of countryList">{{count.name}} </option>
+            </select>
+        </div>
+
+        <div title="Please select the state that the customer is primarily to be served from.">
+            <select placeholder="Anystate" (change)="changeState($event.target.value)" formControlName="state" class="form-group form-control">
+                <option value="" selected disabled>Select State</option>
+                <option *ngFor ="let state of states">{{state.name}} </option>
+        </select>
+        </div>
+
+        <div title="Please select the city that the customer is primarily to be served from.">
+            <select placeholder="Anycity" formControlName="city" class="form-group form-control">
+                <option value="" selected disabled>Select City</option>
+                <option *ngFor ="let city of cities">{{city}} </option>
+        </select>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
