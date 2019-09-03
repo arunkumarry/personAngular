@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -27,13 +27,13 @@ export class PersonFormComponent implements OnInit {
   ngOnInit() {
     let pers = this.personService.editPerson;
     this.personForm = this.fb.group({
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone_number: '',
-      country: '',
-      state: '',
-      city: ''
+      first_name: new FormControl('', Validators.required),
+      last_name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      phone_number: new FormControl('', Validators.required),
+      country: new FormControl('', Validators.required),
+      state: new FormControl('', Validators.required),
+      city: new FormControl('', Validators.required)
     })
 
     this.personForm.valueChanges.subscribe(console.log);
