@@ -6,6 +6,7 @@ import { PersonComponent } from './person/person.component';
 import { PersonListComponent } from './person/person-list/person-list.component';
 import { PersonFormComponent } from './person/person-form/person-form.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PersonService } from './person/person.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
