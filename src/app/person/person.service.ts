@@ -32,8 +32,9 @@ export class PersonService {
         this.personsChanged.next(this.persons.slice());
     }
 
-    deletePerson(index: number){
-        this.persons.splice(index);
+    deletePerson(i: number){
+        console.log(i)
+        this.persons.splice(i, 1);
         this.personsChanged.next(this.persons.slice());
     }
 }
